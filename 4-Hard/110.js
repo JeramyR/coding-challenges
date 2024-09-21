@@ -1,0 +1,153 @@
+
+
+//title: Energy Bill Calculator
+
+//tags: dates,math,numbers
+
+//url: https://edabit.com/challenge/T9vEX6ftTgCabfnCv
+
+//Description:
+//Create a function that calculates an energy bill.
+//Given a billing start date and end date, start and end meter reading, a unit price in pence, and a standing charge (a daily rental fee for your meter) as arguments, calculate your bill.
+//An energy bill is calculated by multiplying the difference between meter readings with the unit price and adding the number of days multiplied by the standing charge. You then have to add 5% tax.
+//(days between dates x standing charge) + (diference bewteen meter readings x unit price) + 5% tax
+//Examples
+//energyBill("2020,01,01", "2020,04,01", 1000, 2000, 0.188, 0.243),  = "£220.62"
+//"2020,04,01" (end date) - "2020,01,01" ( start date ),  = 91 days
+//  2000 ( end meter read )- 1000 ( start meter read ) = 1000 units used
+//  1000 (units) * 0.188p (each unit cost) = £188
+//  91 (days) * 0.243p (standing charge) == £22.113
+//  22.113 (Total standing charge cost) + £188 (total unit cost) = £210.113
+//  210.113 (cost) * 0.05 (uk tax on energy) = 10.50565
+//  210.113 (cost) + 10.50565 (tax) = 220.61865
+//  answer = "£220.62"
+//Notes
+//If the end date is an earlier date from the start date return "Invalid date".
+//If the end meter reading is less then the start meter reading return "Invalid meter readings".
+//Please bring to my attention any clarity issues.
+
+//code area
+///////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////
+
+//tests:
+
+//Test.assertEquals(energyBill("2020,01,01", "2020,04,01", 1000, 2000, 0.188, 0.243), "£220.62")
+//Test.assertEquals(energyBill("1987,11,01", "1989,02,21", 874, 6253, 0.061, 0.124), "£406.76")
+//Test.assertEquals(energyBill("2011,09,02", "2012,09,05", 3297, 4721, 0.151, 0.176), "£293.97")
+//Test.assertEquals(energyBill("1970,01,01", "2020,11,22",   0, 22456, 0.0213, 0.1671), "£3763.59")
+//Test.assertEquals(energyBill("1980,06,15", "1980,12,25", 7650, 9912, 0.0534, 0.054), "£137.77")
+//Test.assertEquals(energyBill("2010,01,01", "2020,01,01", 2000, 2000, 0.171, 0.213), "£816.77")
+//Test.assertEquals(energyBill("2010,01,01", "2020,01,01", 2785, 12874, 0.128, 0.148), "£1923.48")
+//Test.assertEquals(energyBill("2017,03,01", "2017,06,01", 6348, 7559, 0.142, 0.20), "£199.88")
+//Test.assertEquals(energyBill("1984,04,19", "1991,04,10", 2000, 1000, 0.61, 0.074), "Invalid meter readings")
+//Test.assertEquals(energyBill("2020,01,01", "2019,01,01", 1000, 2000, 0.171, 0.243), "Invalid date")
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+
+//title: Find Number of Repetitions of Substring
+
+//tags: algorithms,strings
+
+//url: https://edabit.com/challenge/QcdRmZvuxCxWKdEZk
+
+//Description:
+//Create a function that takes a string as an argument and tells the number of repitions of a substring. It is exactly vice versa to repeating a string function (i.e. if a string "k" is given and asked to make a larger string "z" such that "k" is repated "n' times).
+//In this scenario, we do the opposite. Given the final string, and ask the number of times the substring is repeated.
+//Examples
+//numberOfRepeats("abcabcabcabc" ) ➞ 4
+//
+//numberOfRepeats("bcbcbc") ➞ 3
+//
+//numberOfRepeats("llbllbllbllbllbllb") ➞ 6
+//
+//numberOfRepeats("kc") ➞ 1
+//Notes
+//Assume that the substring length is always greater than 1.
+//Assume that the string length is always greater than 1.
+//Assume that the substring is not always the same.
+
+//code area
+///////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////
+
+//tests:
+
+//Test.assertEquals(numberOfRepeats("abc"), 1)
+//Test.assertEquals(numberOfRepeats("abcabcabc"), 3)
+//Test.assertEquals(numberOfRepeats("abab"), 2)
+//Test.assertEquals(numberOfRepeats("LVLVLVLV"), 4)
+//Test.assertEquals(numberOfRepeats("inkinkinkinkinkink"), 6)
+//Test.assertEquals(numberOfRepeats("abcdabcdabcdabcdabcdabcdabcd"), 7)
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+
+//title: Coloured Triangles
+
+//tags: games,language_fundamentals,strings
+
+//url: https://edabit.com/challenge/9ahp527hHdHwXy7H9
+
+//Description:
+//A coloured triangle is created from different rows of colours (Red, Green or Blue). Successive rows, each containing one fewer colour than the last, are generated by considering the two touching colours in the previous row. If these colours are identical, the same colour is used in the new row. If colours are different, the missing colour is used in the new row. This process continues untill a single colour is generated in the final row.
+//Different possibilities of colours are:
+//Colours Touching:        G G        B G        R G        B R
+//New colour:               G          R          B          G
+//With a bigger example:
+//R R G B R G B B
+// R B R G B R B
+//  G G B R G G
+//   G R G B G
+//    B B R R
+//     B G R
+//      R B
+//       G
+//Goal
+//Create a function which takes first row of the triangle as an input and returns the final colour which would appear at the bottom row. In above example, given input "RRGBRGBB" will return "G".
+//If you are only given one colour as the input, return that colour.
+//There will be no exception handling case.
+//Examples
+//colouredTriangle("B") ➞ "B"
+//
+//colouredTriangle("GB") ➞ "R"
+//
+//colouredTriangle("RBRGBRB") ➞ "G"
+//Notes
+//N/A
+
+//code area
+///////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////
+
+//tests:
+
+//Test.assertEquals(colouredTriangle('GB'), 'R')
+//Test.assertEquals(colouredTriangle('RRR'), 'R')
+//Test.assertEquals(colouredTriangle('RGBG'), 'B')
+//Test.assertEquals(colouredTriangle('RBRGBRB'), 'G')
+//Test.assertEquals(colouredTriangle('RBRGBRBGGRRRBGBBBGG'), 'G')
+//Test.assertEquals(colouredTriangle('B'), 'B')
+//​
+//// Mubashir
+
